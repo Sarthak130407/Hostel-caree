@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard - Hostel Complaint Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="has-sidebar" onload="checkLogin(); loadAdminComplaints();">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Hostel<span>Care</span></div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="register.html">Register Complaint</a></li>
+        <li><a href="complaints.html">Complaints List</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+        <li><a href="warden.html">Warden Overview</a></li>
+        <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== PAGE HEADING ==================== -->
+  <section class="hero" style="padding: 40px 0;">
+    <div class="container">
+      <h1 style="font-size: 26px;">Admin Dashboard</h1>
+      <p>Warden view: monitor and manage all hostel complaints</p>
+    </div>
+  </section>
+
+  <!-- ==================== ADMIN STATISTICS ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="icon">📋</div>
+          <div class="number" id="totalCount">0</div>
+          <div class="label">Total Complaints</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon">⏳</div>
+          <div class="number" id="pendingCount">0</div>
+          <div class="label">Pending</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon">🔧</div>
+          <div class="number" id="progressCount">0</div>
+          <div class="label">In Progress</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon">✅</div>
+          <div class="number" id="resolvedCount">0</div>
+          <div class="label">Resolved</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ADMIN COMPLAINTS TABLE ==================== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+
+      <div class="table-wrapper">
+        <table id="adminTable">
+          <thead>
+            <tr>
+              <th>Complaint ID</th>
+              <th>Student Name</th>
+              <th>Room</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <!-- 
+            This tbody starts empty. loadAdminComplaints() in
+            script.js fills it with the real complaints saved
+            in localStorage, the same data students submit
+            through register.html.
+          -->
+          <tbody id="adminTableBody">
+          </tbody>
+        </table>
+
+        <!-- Shown only when there are zero saved complaints. -->
+        <div class="empty-state" id="adminEmptyState" style="display: none;">
+          No complaints found.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>Hostel Complaint Management System &copy; 2026 | College Front End Project</p>
+  </footer>
+
+  <!-- This line connects our JavaScript file to this page -->
+  <script src="script.js"></script>
+</body>
+</html>

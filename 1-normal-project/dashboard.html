@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hostel Complaint Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="has-sidebar" onload="checkLogin();">
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Hostel<span>Care</span></div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html" class="active">Home</a></li>
+        <li><a href="register.html">Register Complaint</a></li>
+        <li><a href="complaints.html">Complaints List</a></li>
+        <li><a href="warden.html">Warden Overview</a></li>
+
+        <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- The homepage content below is rendered by React -->
+  <div id="root"></div>
+
+  <footer>
+    <p>Hostel Complaint Management System &copy; 2026 </p>
+  </footer>
+
+  <!-- React is stored locally in the lib folder, so no internet is needed -->
+  <script src="lib/react.production.min.js"></script>
+  <script src="lib/react-dom.production.min.js"></script>
+
+  <!-- script.js gives us getComplaints(), checkLogin(), logout() -->
+  <script src="script.js"></script>
+
+  <!-- The React homepage (source: homepage.jsx) -->
+  <script src="homepage.js"></script>
+</body>
+</html>

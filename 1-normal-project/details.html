@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Complaint Details - Hostel Complaint Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="has-sidebar" onload="checkLogin(); loadComplaintDetails();">
+ <nav class="navbar">
+    <div class="container">
+      <div class="logo">Hostel<span>Care</span></div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="register.html">Register Complaint</a></li>
+        <li><a href="complaints.html" class="active">Complaints List</a></li>
+        <li><a href="warden.html">Warden Overview</a></li>
+      
+        <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+ <section class="hero" style="padding: 40px 0;">
+    <div class="container">
+      <h1 style="font-size: 26px;">Complaint Details</h1>
+      <p>Complete information about the selected complaint</p>
+    </div>
+  </section>
+ <section class="section">
+    <div class="container">
+
+      <div class="details-card">
+        <h2 id="detailTitle">Complaint HC-101</h2>
+
+        <div class="details-row">
+          <span>Student Name</span>
+          <span id="detailName">Rahul Sharma</span>
+        </div>
+        <div class="details-row">
+          <span>Room Number</span>
+          <span id="detailRoom">A-204</span>
+        </div>
+        <div class="details-row">
+          <span>Category</span>
+          <span id="detailCategory">Plumbing</span>
+        </div>
+        <div class="details-row">
+          <span>Description</span>
+          <span id="detailDescription">Tap in the washroom is leaking continuously.</span>
+        </div>
+        <div class="details-row">
+          <span>Priority</span>
+          <span id="detailPriority">High</span>
+        </div>
+        <div class="details-row">
+          <span>Date Submitted</span>
+          <span id="detailDate">10-09-2026</span>
+        </div>
+        <div class="details-row" style="border-bottom: none;">
+          <span>Current Status</span>
+          <span id="detailStatus"><span class="status status-pending">Pending</span></span>
+        </div>
+      </div>
+  <div class="progress-track">
+        <div class="progress-step completed">
+          <div class="circle">1</div>
+          <p>Submitted</p>
+        </div>
+        <div class="progress-step" id="stepProgress">
+          <div class="circle">2</div>
+          <p>In Progress</p>
+        </div>
+        <div class="progress-step" id="stepResolved">
+          <div class="circle">3</div>
+          <p>Resolved</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    <p>Hostel Complaint Management System &copy; 2026 </p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

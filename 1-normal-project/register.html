@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register Complaint - Hostel Complaint Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="has-sidebar" onload="checkLogin()">
+ <nav class="navbar">
+    <div class="container">
+      <div class="logo">Hostel<span>Care</span></div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="register.html" class="active">Register Complaint</a></li>
+        <li><a href="complaints.html">Complaints List</a></li>
+        <li><a href="warden.html">Warden Overview</a></li>
+       
+        <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="hero" style="padding: 40px 0;">
+    <div class="container">
+      <h1 style="font-size: 26px;">Register a Complaint</h1>
+      <p>Fill in the details below and submit your complaint</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+
+      <div class="form-box">
+   <div class="success-message" id="successMessage">
+          ✅ Your complaint has been submitted successfully! The warden will review it soon.
+        </div>
+    <form id="complaintForm" onsubmit="submitComplaint(event)">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="studentName">Student Name</label>
+              <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="roomNumber">Room Number</label>
+              <input type="text" id="roomNumber" name="roomNumber" placeholder="e.g. 204" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hostelBlock">Hostel Block</label>
+              <select id="hostelBlock" name="hostelBlock" required>
+                <option value="">Select Block</option>
+                <option value="A">Block A</option>
+                <option value="B">Block B</option>
+                <option value="C">Block C</option>
+                <option value="D">Block D</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Complaint Category</label>
+              <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Fan">Fan</option>
+                <option value="AC">AC</option>
+                <option value="Cooler">Cooler</option>
+                <option value="Food">Food</option>
+                <option value="Cleanliness">Cleanliness</option>
+                <option value="Water">Water</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Complaint Description</label>
+            <textarea id="description" name="description" rows="4" minlength="10" placeholder="Describe your problem in detail..." required></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="priority">Priority</label>
+              <select id="priority" name="priority" required>
+                <option value="">Select Priority</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-view">Submit Complaint</button>
+            <button type="reset" class="btn btn-secondary" style="color: var(--navy); border-color: var(--navy);">Reset</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Hostel Complaint Management System &copy; 2026 </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

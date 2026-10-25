@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Complaints List - Hostel Complaint Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="has-sidebar" onload="checkLogin(); loadComplaints();">
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Hostel<span>Care</span></div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="register.html">Register Complaint</a></li>
+        <li><a href="complaints.html" class="active">Complaints List</a></li>
+        <li><a href="warden.html">Warden Overview</a></li>
+        
+        <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding: 40px 0;">
+    <div class="container">
+      <h1 style="font-size: 26px;">My Complaints</h1>
+      <p>Below is the list of all complaints submitted so far</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="table-wrapper">
+        <table id="complaintsTable">
+          
+          <thead>
+            <tr>
+              <th>Complaint ID</th>
+              <th>Student Name</th>
+              <th>Room</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+         
+          <tbody id="complaintsTableBody">
+          </tbody>
+        </table>
+        <div class="empty-state" id="emptyState" style="display: none;">
+          No complaints submitted yet.
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    <p>Hostel Complaint Management System &copy; 2026 </p>
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>

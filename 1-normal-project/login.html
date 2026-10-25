@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Hostel Complaint Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <section class="auth-page">
+    <div class="auth-card">
+
+      <div class="auth-logo">Hostel<span>Care</span></div>
+      <p class="auth-subtitle">Hostel Complaint Management System</p>
+
+    
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" id="loginTab" onclick="showLogin()">Login</button>
+        <button type="button" class="auth-tab" id="signupTab" onclick="showSignup()">Sign Up</button>
+      </div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+
+        <p class="error-message" id="loginError">
+          Invalid Email/Student ID or Password
+        </p>
+
+        <div class="form-group">
+          <label for="loginEmail">Email / Student ID</label>
+          <input type="text" id="loginEmail" name="loginEmail" placeholder="Enter your email or student ID" required />
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+
+      </form>
+
+         <form id="signupForm" class="hidden" onsubmit="handleSignup(event)">
+
+            <div class="success-message" id="signupMessage">
+           Account created successfully! Please login now.
+        </div>
+
+        <div class="form-group">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" name="signupName" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="signupEmail">Email / Student ID</label>
+          <input type="text" id="signupEmail" name="signupEmail" placeholder="Enter your email or student ID" required />
+        </div>
+
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" name="signupPassword" placeholder="Create a password" minlength="6" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+
+      </form>
+
+      <p class="auth-note">
+        This is a frontend-only academic project. Accounts are saved in
+        your browser's localStorage, not a real server database.
+      </p>
+
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

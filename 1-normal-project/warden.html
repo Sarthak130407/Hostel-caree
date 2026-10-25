@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Warden Overview - Hostel Complaint Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="has-sidebar" onload="checkLogin(); loadWardenOverview();">
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Hostel<span>Care</span></div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="register.html">Register Complaint</a></li>
+        <li><a href="complaints.html">Complaints List</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="warden.html" class="active">Warden Overview</a></li>
+        <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding: 40px 0;">
+    <div class="container">
+      <h1 style="font-size: 26px;">Warden Overview</h1>
+      <p>A complete summary of all hostel complaints at a glance</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="icon">📋</div>
+          <div class="number" id="wTotalCount">0</div>
+          <div class="label">Total Complaints</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon">⏳</div>
+          <div class="number" id="wPendingCount">0</div>
+          <div class="label">Pending</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon">🔧</div>
+          <div class="number" id="wProgressCount">0</div>
+          <div class="label">In Progress</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon">✅</div>
+          <div class="number" id="wResolvedCount">0</div>
+          <div class="label">Resolved</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon">🚨</div>
+          <div class="number" id="wHighCount">0</div>
+          <div class="label">High Priority (Open)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Complaints Breakdown</h2>
+        <p>Where most complaints are coming from</p>
+      </div>
+
+      <div class="form-row" style="align-items: flex-start;">
+        <div class="table-wrapper" style="flex: 1;">
+          <table style="min-width: 0;">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Complaints</th>
+              </tr>
+            </thead>
+            <tbody id="categoryTableBody">
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrapper" style="flex: 1;">
+          <table style="min-width: 0;">
+            <thead>
+              <tr>
+                <th>Hostel Block</th>
+                <th>Complaints</th>
+              </tr>
+            </thead>
+            <tbody id="blockTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Recent Complaints</h2>
+        <p>The 5 most recently submitted complaints</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="recentTable">
+          <thead>
+            <tr>
+              <th>Complaint ID</th>
+              <th>Student Name</th>
+              <th>Room</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="recentTableBody">
+          </tbody>
+        </table>
+        <div class="empty-state" id="recentEmpty" style="display: none;">
+          No complaints submitted yet.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Hostel Complaint Management System &copy; 2026 </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
